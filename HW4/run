@@ -1,0 +1,16 @@
+#!/bin/bash
+ 
+
+ 
+gnome-terminal -e "./tsd -p 3010 -h localhost -r R"
+sleep 2
+gnome-terminal -e "./tsd -p 3020  -h localhost -n localhost -q 3010 "
+gnome-terminal -e "./tsd -p 3030  -h localhost  -n localhost -q 3010 "
+#gnome-terminal -e "./tsd -p 3040  -h localhost -n localhost -q 3010 "
+ 
+
+echo "Server is ready to connect"
+
+gnome-terminal -e "./tsc -u u1 -p 3010 -h localhost"
+gnome-terminal -e "./tsc -u u2  -p 3010 -h localhost"
+
